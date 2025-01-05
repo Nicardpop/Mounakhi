@@ -1,0 +1,157 @@
+/* index.css */
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #004d99;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-title h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-top: 80px; /* Offset for the navbar height */
+}
+
+.input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.inputValue {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  text-align: center;
+}
+
+.button, .geolocation {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0066cc;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover, .geolocation:hover {
+  background-color: #004d99;
+}
+
+.displayWeather {
+  margin-top: 20px;
+}
+
+.displayWeather h3,
+.displayWeather h2,
+.displayWeather p {
+  margin: 10px 0;
+}
+
+.displayWeather h2 {
+  font-size: 2rem;
+}
+
+.displayWeather img {
+  margin: 20px 0;
+  width: 80px;
+  height: 80px;
+}
+
+/* Media Queries */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .nav-title h1 {
+      font-size: 1.5rem;
+  }
+
+  .container {
+      margin-top: 70px;
+  }
+
+  .displayWeather h2 {
+      font-size: 1.8rem;
+  }
+
+  .button, .geolocation {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+  }
+
+  .displayWeather img {
+      width: 70px;
+      height: 70px;
+  }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+  .nav-title h1 {
+      font-size: 1.2rem;
+  }
+
+  .container {
+      margin-top: 60px;
+  }
+
+  .input {
+      flex-direction: column;
+  }
+
+  .inputValue {
+      width: 100%;
+  }
+
+  .button, .geolocation {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .displayWeather h2 {
+      font-size: 1.5rem;
+  }
+
+  .displayWeather img {
+      width: 60px;
+      height: 60px;
+  }
+}
