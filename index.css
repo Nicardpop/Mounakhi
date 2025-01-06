@@ -1,42 +1,53 @@
-/* index.css */
+/* New Modern Design for Weather App */
 
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: #fff;
+  font-family: 'Roboto',sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .navbar {
   width: 100%;
-  background-color: #004d99;
-  padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .nav-title h1 {
   margin: 0;
-  font-size: 1.8rem;
-  color: #fff;
+  font-size: 2rem;
+  color: #4a4a4a;
   text-align: center;
+  font-weight: 600;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 10px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
   width: 90%;
-  max-width: 500px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 80px; /* Offset for the navbar height */
+  margin-top: 120px; /* Offset for the navbar height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .input {
@@ -44,40 +55,47 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .inputValue {
   flex: 1;
-  min-width: 200px;
-  padding: 10px;
+  min-width: 220px;
+  padding: 12px 15px;
   font-size: 1rem;
-  border: none;
-  border-radius: 5px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
   outline: none;
-  background: rgba(255, 255, 255, 0.9);
+  background: #f9f9f9;
   color: #333;
   text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.inputValue:focus {
+  border-color: #74ebd5;
 }
 
 .button, .geolocation {
-  padding: 10px 20px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
-  background-color: #0066cc;
+  border-radius: 10px;
+  background-color: #74ebd5;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover, .geolocation:hover {
-  background-color: #004d99;
+  background-color: #67c7be;
+  transform: scale(1.1);
 }
 
 .displayWeather {
   margin-top: 20px;
+  animation: fadeIn 1.2s ease;
 }
 
 .displayWeather h3,
@@ -87,13 +105,25 @@ body {
 }
 
 .displayWeather h2 {
-  font-size: 2rem;
+  font-size: 2.8rem;
+  color: #74ebd5;
+  font-weight: bold;
 }
 
 .displayWeather img {
-  margin: 20px 0;
+  margin: 10px 0;
   width: 80px;
   height: 80px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* Media Queries */
@@ -101,57 +131,31 @@ body {
 /* For tablets */
 @media (max-width: 768px) {
   .nav-title h1 {
-      font-size: 1.5rem;
-  }
-
-  .container {
-      margin-top: 70px;
-  }
-
-  .displayWeather h2 {
       font-size: 1.8rem;
   }
 
+  .container {
+      margin-top: 100px;
+  }
+
+  .displayWeather h2 {
+      font-size: 2.3rem;
+  }
+
   .button, .geolocation {
-      padding: 8px 16px;
+      padding: 10px 20px;
       font-size: 0.9rem;
   }
 
   .displayWeather img {
-      width: 70px;
-      height: 70px;
+      width: 100px;
+      height: 100px;
   }
 }
 
-/* For small mobile devices */
-@media (max-width: 480px) {
-  .nav-title h1 {
-      font-size: 1.2rem;
-  }
+.coords{
+  display: flex;
+  justify-content: space-around;
+  flex:1;
 
-  .container {
-      margin-top: 60px;
-  }
-
-  .input {
-      flex-direction: column;
-  }
-
-  .inputValue {
-      width: 100%;
-  }
-
-  .button, .geolocation {
-      width: 100%;
-      padding: 10px;
-  }
-
-  .displayWeather h2 {
-      font-size: 1.5rem;
-  }
-
-  .displayWeather img {
-      width: 60px;
-      height: 60px;
-  }
 }
